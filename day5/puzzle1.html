@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+const input = ``
+
+const inpArr = input.split('\n')
+let max=0
+
+
+inpArr.forEach( boardingPass => {
+    let rows = [0, 127]
+    let seats = [0, 7]
+    let seatID
+
+    for (let i = 0; i<7; i++){
+            if(boardingPass[i]=='F'){
+                rows[1] -= Math.ceil((rows[1] - rows[0])/2)
+            } else {
+                rows[0] +=  Math.ceil([0] + (rows[1] - rows[0])/2) 
+            }
+        }
+
+        for (let i = 7; i<10; i++){
+
+            if(boardingPass[i]=='L'){
+                seats[1] -= Math.ceil((seats[1] - seats[0])/2)
+            } else {
+                seats[0] +=  Math.ceil([0] + (seats[1] - seats[0])/2) 
+            }
+        }
+        seatID = rows[0]*8 + seats[0]
+        if(seatID>max) max = seatID
+    })
+
+console.log('max: ' + max)
+
+</script>
+<body>
+    
+</body>
+</html>
