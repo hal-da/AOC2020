@@ -39,6 +39,19 @@ inpArr.forEach( boardingPass => {
 
 console.log('max: ' + max)
 
+//should have done that
+
+max = 0
+inpArr.forEach(seat =>{
+    let row = seat.slice(0,7).replace(/F/g, 0).replace(/B/g,1)
+    row = parseInt(row,2)
+    let seatNo = seat.slice(7,10).replace(/L/g, 0).replace(/R/g,1)
+    seatNo = parseInt(seatNo,2)
+    let seatId = row*8 + seatNo
+    if(seatId>max) max = seatId
+})
+console.log(max)
+
 </script>
 <body>
     
