@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+const input =``
+
+
+const inpArr = input.split('\n\n')
+
+
+let sum = 0
+inpArr.forEach(group=>{
+    group = group.split('\n')
+    if(group.length==1){
+        sum+=group[0].length
+    } else {
+        let groupLength = group.length
+        group = group.join('').split('')
+        let c={}
+
+        group.forEach( e=>{
+            if(c[e]){
+                c[e]++
+            } else {
+                c[e]=1
+            }})
+       Object.values(c).forEach(val =>{if(val == groupLength)sum++})
+    }
+
+})
+console.log(sum)
+//well ok, im not proud, but it works, so, i guess its something...
+</script>
+<body>
+    
+</body>
+</html>

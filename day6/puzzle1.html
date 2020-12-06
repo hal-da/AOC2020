@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+const input =``
+const inpArr = input.split('\n\n')
+
+
+let sum = 0
+inpArr.forEach(group=>{
+    group = group.replace(/\n/g,'')
+    group = group.split('').sort()
+    console.log(group)
+    if(group[0]){
+        sum++
+        for (let i =0; i<group.length-1;i++){
+            if(group[i]!=group[i+1])sum++
+        }
+    }   
+})
+console.log(sum)
+
+/*
+let inp = input.replace(/\n/g,'');
+inp = inp.split('')
+let c={}
+
+inp.forEach( e=>{
+    if(c[e]){
+        c[e]++
+    } else {
+        c[e]=1
+    }
+})
+
+console.log(c) */
+
+
+</script>
+<body>
+    
+</body>
+</html>
